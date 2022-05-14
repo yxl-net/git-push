@@ -1,27 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Yxl.Data;
 
 namespace Yxl.GitPush
 {
-    public partial class Form1 : Form
+    /// <summary>
+    /// 主窗体
+    /// </summary>
+    public partial class FormMain : Form
     {
-        private DataTable dt=new DataTable();
+        #region 字段
+        /// <summary>
+        /// 仓库 内存表
+        /// </summary>
+        private DataTable dtRepo=new DataTable();
 
-        public Form1()
+        /// <summary>
+        /// 提交 内存表
+        /// </summary>
+        private DataTable dtCommit=new DataTable();
+        #endregion
+
+        #region 构造方法
+        /// <summary>
+        /// 主窗体 构造方法
+        /// </summary>
+        public FormMain()
         {
             InitializeComponent();
-            dt.AddColumns("sDir","sUrl","iCount");
-            dgv.DataSource = dt;
         }
+        #endregion
+
 
         private void tsbAdd_Click(object sender, EventArgs e)
         {
